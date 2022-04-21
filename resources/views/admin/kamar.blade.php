@@ -36,6 +36,7 @@
                 <th class="d-flex">
                     <a class="btn btn-warning text-light" href="/admin/kamar/edit/{{ $k->id }}">Edit</a>
                     <form method="post" action="/admin/kamar/destroy">
+                        @method('delete')
                         @csrf
                         <input type="hidden" name="id" value="{{ $k->id }}">
                         <button class="btn btn-danger text-light" type="submit">Delete</button>
