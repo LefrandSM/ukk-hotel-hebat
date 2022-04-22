@@ -71,13 +71,23 @@ class KamarController extends Controller
     public function update(Request $request, Kamar $kamar)
     {
         $validateData = $request->validate([
-            'fasilitas_id' => 'required',
             'tipe_kamar' => 'required',
             'jml_kamar' => 'required'
         ]);
+        $request->validate(['fasilitas_id' => 'required']);
+
+        // detach menghapus data many to many
+        $kamar_fasilitas = Kamar::find($kamar->id, 'id');
+        $kamar_fasilitas->fasilitas()->detach();
+        // attach menambahkan data many to many
+        $kamar_fasilitas = Kamar::find($kamar->id, 'id');
+
+        $kamar_fasilitas->fasilitas()->attach($request->fasilitas_id);
 
         Kamar::where('id', $kamar->id)
             ->update($validateData);
+
+
 
         return redirect('/admin/kamar')->with('success', 'Kamar berhasil di edit!');
     }
