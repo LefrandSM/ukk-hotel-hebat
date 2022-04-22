@@ -39,7 +39,7 @@
                         @method('delete')
                         @csrf
                         <input type="hidden" name="id" value="{{ $k->id }}">
-                        <button class="btn btn-danger text-light" type="submit">Delete</button>
+                        <button class="btn btn-danger text-light" onclick="confirm('Anda yakin menghapus data ?')" type="submit">Delete</button>
                     </form>
                 </th>
             </tr>

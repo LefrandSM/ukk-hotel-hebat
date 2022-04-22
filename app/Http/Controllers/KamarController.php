@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Kamar;
 use App\Models\FasilitasKamar;
 
@@ -58,18 +59,16 @@ class KamarController extends Controller
 
         return redirect('/admin/kamar')->with('success', 'Kamar berhasil di hapus!');
     }
-    public function update(Request $request,Kamar $kamar)
+    public function update(Request $request, Kamar $kamar)
     {
         $validateData = $request->validate([
             'fasilitas_id' => 'required',
             'tipe_kamar' => 'required',
-            'jml_kamar' => 'required',
-            
+            'jml_kamar' => 'required'
         ]);
 
-
         Kamar::where('id', $kamar->id)
-                ->update($validateData);
+            ->update($validateData);
 
         return redirect('/admin/kamar')->with('success', 'Kamar berhasil di edit!');
     }

@@ -27,7 +27,7 @@
         <label for="Jumlah_kamar" class="col-sm-2 col-form-label">Fasilitas kamar</label>
         <div class="col-sm-10">
             @foreach ($fasilitas_kamar as $fk)
-            @if ($fk->id == $kamar->id)
+            @if ($fk->id == old('fasilitas_id', $kamar->id))
                 <div class="form-check">
                     <input class="form-check-input" checked type="radio" name="fasilitas_id" id="{{ $fk->id }}" value="{{ $fk->id }}">
                     <label class="form-check-label" for="{{ $fk->id }}">
@@ -51,7 +51,7 @@
     <div class="row mb-4">
         <div class="col-sm-2"></div>
         <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary mb-5">Tambah</button>
+            <button type="submit" class="btn btn-primary mb-5">Edit</button>
         </div>
     </div>
     </form>
