@@ -20,7 +20,6 @@ class CreateTamuTable extends Migration
             $table->string('email', 30);
             $table->string('no_hp', 20);
             $table->string('nama_tamu', 50);
-            $table->string('NIK', 20);
             $table->string('password', 15);
         });
     }

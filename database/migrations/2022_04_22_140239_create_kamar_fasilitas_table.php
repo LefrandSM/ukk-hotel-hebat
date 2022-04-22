@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKamarTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateKamarTable extends Migration
      */
     public function up()
     {
-        Schema::create('tb_kamar', function (Blueprint $table) {
+        Schema::create('kamar_fasilitas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('fasilitas_id');
-            $table->string('tipe_kamar', 50);
-            $table->integer('jml_kamar')->length(3)->unsigned();
+            $table->foreignId('kamar_id');
         });
     }
 
@@ -28,6 +27,6 @@ class CreateKamarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_kamar');
+        Schema::dropIfExists('kamar_fasilitas');
     }
-}
+};
