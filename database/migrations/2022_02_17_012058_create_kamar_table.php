@@ -15,9 +15,9 @@ class CreateKamarTable extends Migration
     {
         Schema::create('tb_kamar', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('fasilitas_id');
             $table->string('tipe_kamar', 50);
             $table->integer('jml_kamar')->length(3)->unsigned();
+            $table->timestamps();
         });
     }
 

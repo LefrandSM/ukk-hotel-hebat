@@ -16,7 +16,7 @@
                     <a class="nav-link {{ Request::is('admin/kamar*') ? 'text-dark' : '' }}" aria-current="page" href="/admin/kamar">Kamar</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Fasilitas Kamar</a>
+                    <a class="nav-link {{ Request::is('admin/fasilitas-kamar*') ? 'text-dark' : '' }}" href="/admin/fasilitas-kamar">Fasilitas Kamar</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">Fasilitas Hotel</a>

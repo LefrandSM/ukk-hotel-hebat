@@ -12,6 +12,6 @@ class FasilitasKamar extends Model
 
     public function kamar()
     {
-        return $this->hasMany(Kamar::class);
+        return $this->belongsToMany(Kamar::class, 'kamar_fasilitas', 'kamar_id', 'fasilitas_id');
     }
 }

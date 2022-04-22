@@ -13,7 +13,7 @@ class KamarController extends Controller
     {
         $data = [
             'title' => 'Kamar',
-            'kamar' => Kamar::get(),
+            'kamar' => Kamar::with('fasilitas')->get(),
             'status' => 'admin'
         ];
 
@@ -50,12 +50,21 @@ class KamarController extends Controller
 
 
         Kamar::create($validateData);
+        $kamar = Kamar::with('fasilitas')->get();
+        $kamar_fasilitas = $kamar->last();
+
+        $kamar_fasilitas->fasilitas()->attach($validateData['fasilitas_id']);
 
         return redirect('/admin/kamar')->with('success', 'Kamar baru di tambahkan!');
     }
     public function destroy(Request $request)
     {
+        $kamar_fasilitas = Kamar::find($request->id, 'id');
+
+        $kamar_fasilitas->fasilitas()->detach();
+
         Kamar::destroy($request->id);
+
 
         return redirect('/admin/kamar')->with('success', 'Kamar berhasil di hapus!');
     }
