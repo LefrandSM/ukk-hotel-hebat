@@ -27,21 +27,12 @@
         <label for="Jumlah_kamar" class="col-sm-2 col-form-label">Fasilitas kamar</label>
         <div class="col-sm-10">
             @foreach ($fasilitas_kamar as $fk)
-            @if ($fk->id == old('fasilitas_id', $kamar->id))
-                <div class="form-check">
-                    <input class="form-check-input" checked type="radio" name="fasilitas_id" id="{{ $fk->id }}" value="{{ $fk->id }}">
-                    <label class="form-check-label" for="{{ $fk->id }}">
-                    {!! $fk->nama_fasilitas !!}
-                    </label>
-                </div>
-            @else
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="fasilitas_id" id="{{ $fk->id }}" value="{{ $fk->id }}">
-                    <label class="form-check-label" for="{{ $fk->id }}">
-                    {!! $fk->nama_fasilitas !!}
-                    </label>
-                </div>
-            @endif
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="fasilitas_id[]" value="{{ $fk->id }}" id="{{ $fk->id }}">
+                <label class="form-check-label d-block" for="{{ $fk->id }}">
+                {{ $fk->nama_fasilitas }}
+                </label>
+            </div>
             @endforeach
             @error('fasilitas_id')
                 <p class="text-danger">{{ $message }}</p>
