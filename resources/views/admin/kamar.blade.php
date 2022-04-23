@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-xl-2">
+        <div class="col-lg-3">
             <h1 class="display-6">Kamar</h1>
         </div>
         <div class="col-xl-10">
