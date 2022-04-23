@@ -14,11 +14,12 @@
             @endif
         </div>
     </div>
-    <a href="/admin/kamar/tambah" class="btn btn-primary my-2 px-3">Tambah</a>
+    <a href="/admin/fasilitas-kamar/tambah" class="btn btn-primary my-2 px-3">Tambah</a>
     <table class="table table-bordered table-responsive">
         <thead class="bg-dark text-light">
             <tr>
                 <th>No</th>
+                <th>Tipe Kamar</th>
                 <th>Fasilitas</th>
                 <th>Aksi</th>
             </tr>
@@ -28,17 +29,24 @@
                 <?php $angka = 1; ?>
                 @foreach ($fasilitas as $f)
                 <tr>
-                    <th>{{ $angka++ }}</th>
-                    <th>{{ $f->nama_fasilitas }}</th>
-                    <th class="d-flex">
-                        <a class="btn btn-warning text-light" href="/admin/kamar/edit/{{ $f->id }}">Edit</a>
-                        <form method="post" action="/admin/kamar/destroy">
+                    <td>{{ $angka++ }}</td>
+                    <td>
+                        @foreach ($f->kamar as $kamar)
+                        <ul>
+                            <li>{{ $kamar->tipe_kamar }}</li>
+                        </ul>
+                        @endforeach
+                    </td>
+                    <td>{{ $f->nama_fasilitas }}</td>
+                    <td class="d-flex">
+                        <a class="btn btn-warning text-light" href="/admin/fasilitas-kamar/edit/{{ $f->id }}">Edit</a>
+                        <form method="post" action="/admin/fasilitas-kamar/destroy">
                             @method('delete')
                             @csrf
                             <input type="hidden" name="id" value="{{ $f->id }}">
                             <button class="btn btn-danger text-light" onclick="confirm('Anda yakin menghapus data ?')" type="submit">Delete</button>
                         </form>
-                    </th>
+                    </td>
                 </tr>
                 @endforeach
             @else

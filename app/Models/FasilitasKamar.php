@@ -9,9 +9,10 @@ class FasilitasKamar extends Model
 {
     protected $table = 'tb_fasilitas_kamar';
     protected $guarded = ['id'];
+    public $timestamps = false;
 
     public function kamar()
     {
-        return $this->belongsToMany(Kamar::class, 'kamar_fasilitas', 'kamar_id', 'fasilitas_id');
+        return $this->belongsToMany(Kamar::class, 'kamar_fasilitas', 'fasilitas_id', 'kamar_id');
     }
 }
