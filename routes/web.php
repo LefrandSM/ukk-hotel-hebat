@@ -37,3 +37,4 @@ Route::put('/admin/fasilitas-kamar/update/{fasilitas}', [FasilitasKamarControlle
 Route::get('/admin/fasilitas-hotel', [FasilitasHotelController::class, 'fasilitas']);
 Route::get('/admin/fasilitas-hotel/tambah', [FasilitasHotelController::class, 'tambah_fasilitas']);
 Route::post('/admin/fasilitas-hotel/create', [FasilitasHotelController::class, 'create']);
+Route::delete('/admin/fasilitas-hotel/destroy', [FasilitasHotelController::class, 'destroy']);

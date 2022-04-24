@@ -38,4 +38,10 @@ class FasilitasHotelController extends Controller
 
         return redirect('/admin/fasilitas-hotel')->with('success', 'Fasilitas hotel berhasil di tambahkan');
     }
+    public function destroy(Request $request)
+    {
+        FasilitasHotel::destroy($request->id);
+
+        return redirect('/admin/fasilitas-hotel')->with('success', 'Fasilitas hotel berhasil di hapus');
+    }
 }

@@ -35,8 +35,8 @@
                     <td>{{ $f->detail }}</td>
                     <td>{{ $f->image }}</td>
                     <td class="d-flex">
-                        <a class="btn btn-warning text-light" href="/admin/fasilitas-kamar/edit/{{ $f->id }}">Edit</a>
-                        <form method="post" action="/admin/fasilitas-kamar/destroy">
+                        <a class="btn btn-warning text-light" href="/admin/fasilitas-hotel/edit/{{ $f->id }}">Edit</a>
+                        <form method="post" action="/admin/fasilitas-hotel/destroy">
                             @method('delete')
                             @csrf
                             <input type="hidden" name="id" value="{{ $f->id }}">
