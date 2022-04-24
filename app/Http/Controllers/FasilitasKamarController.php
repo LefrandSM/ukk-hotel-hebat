@@ -26,6 +26,16 @@ class FasilitasKamarController extends Controller
 
         return view('admin/create/fasilitas-kamar', $data);
     }
+    public function edit_fasilitas(FasilitasKamar $fasilitas)
+    {
+        $data = [
+            'title' => 'Edit fasilitas Kamar',
+            'fasilitas' => $fasilitas,
+            'status' => 'admin'
+        ];
+
+        return view('admin/edit/fasilitas-kamar', $data);
+    }
     public function store(Request $request)
     {
         $validateData = $request->validate([
@@ -46,5 +56,16 @@ class FasilitasKamarController extends Controller
 
 
         return redirect('/admin/fasilitas-kamar')->with('success', 'Fasilitas kamar berhasil di hapus!');
+    }
+    public function update(Request $request, FasilitasKamar $fasilitas)
+    {
+        $validateData = $request->validate([
+            'nama_fasilitas' => 'required'
+        ]);
+
+        FasilitasKamar::where('id', $fasilitas->id)
+            ->update($validateData);
+
+        return redirect('/admin/fasilitas-kamar')->with('success', 'Fasilitas kamar berhasil di edit!');
     }
 }

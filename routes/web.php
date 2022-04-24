@@ -28,5 +28,7 @@ Route::put('/admin/kamar/update/{kamar}', [KamarController::class, 'update']);
 // fasilitas-kamar
 Route::get('/admin/fasilitas-kamar', [FasilitasKamarController::class, 'fasilitas']);
 Route::get('/admin/fasilitas-kamar/tambah', [FasilitasKamarController::class, 'tambah_fasilitas']);
+Route::get('/admin/fasilitas-kamar/edit/{fasilitas}', [FasilitasKamarController::class, 'edit_fasilitas']);
 Route::post('/admin/fasilitas-kamar/store', [FasilitasKamarController::class, 'store']);
 Route::delete('/admin/fasilitas-kamar/destroy', [FasilitasKamarController::class, 'destroy']);
+Route::put('/admin/fasilitas-kamar/update/{fasilitas}', [FasilitasKamarController::class, 'update']);
