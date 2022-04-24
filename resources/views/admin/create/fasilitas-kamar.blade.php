@@ -1,7 +1,7 @@
 @extends('template/layouts')
 
 @section('content')
-    <h1 class="display-6 mb-5">Kamar</h1>
+    <h1 class="display-6 mb-5">Fasilitas Kamar</h1>
     <form method="post" action="/admin/fasilitas-kamar/store">
         @csrf
         <div class="mb-3 row">

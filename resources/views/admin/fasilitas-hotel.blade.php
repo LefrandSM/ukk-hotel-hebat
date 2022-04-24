@@ -5,6 +5,14 @@
         <div class="col-lg-3">
             <h1 class="display-6">Fasilitas Hotel</h1>
         </div>
+        <div class="col-lg-9">
+            @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ session('success') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+        </div>
     </div>
     <a href="/admin/fasilitas-hotel/tambah" class="btn btn-primary my-2 px-3">Tambah</a>
     <table class="table table-bordered table-responsive">

@@ -9,4 +9,5 @@ class FasilitasHotel extends Model
 {
     protected $table = 'tb_fasilitas_hotel';
     protected $guarded = ['id'];
+    public $timestamps = false;
 }
