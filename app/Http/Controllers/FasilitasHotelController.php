@@ -26,6 +26,16 @@ class FasilitasHotelController extends Controller
 
         return view('/admin/create/fasilitas-hotel', $data);
     }
+    public function edit_fasilitas(FasilitasHotel $fasilitas)
+    {
+        $data = [
+            'title' => 'Edit fasilitas hotel',
+            'fasilitas' => $fasilitas,
+            'status' => 'admin'
+        ];
+
+        return view('/admin/edit/fasilitas-hotel', $data);
+    }
     public function create(Request $request)
     {
         $validateData = $request->validate([
@@ -43,5 +53,18 @@ class FasilitasHotelController extends Controller
         FasilitasHotel::destroy($request->id);
 
         return redirect('/admin/fasilitas-hotel')->with('success', 'Fasilitas hotel berhasil di hapus');
+    }
+    public function update(Request $request, FasilitasHotel $fasilitas)
+    {
+        $validateData = $request->validate([
+            'nama' => 'required',
+            'detail' => 'required'
+        ]);
+        $validateData['image'] = '';
+
+        FasilitasHotel::where('id', $fasilitas->id)
+            ->update($validateData);
+
+        return redirect('/admin/fasilitas-hotel')->with('success', 'Fasilitas hotel berhasil di edit');
     }
 }
