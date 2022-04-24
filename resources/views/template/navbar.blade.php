@@ -19,7 +19,7 @@
                     <a class="nav-link {{ Request::is('admin/fasilitas-kamar*') ? 'text-dark' : '' }}" href="/admin/fasilitas-kamar">Fasilitas Kamar</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Fasilitas Hotel</a>
+                    <a class="nav-link {{ Request::is('admin/fasilitas-hotel*') ? 'text-dark' : '' }}" href="/admin/fasilitas-hotel">Fasilitas Hotel</a>
                     </li>
                 </ul>
             </div>

@@ -1,0 +1,46 @@
+@extends('template/layouts')
+
+@section('content')
+    <div class="row">
+        <div class="col-lg-3">
+            <h1 class="display-6">Fasilitas Hotel</h1>
+        </div>
+    </div>
+    <a href="/admin/fasilitas-hotel/tambah" class="btn btn-primary my-2 px-3">Tambah</a>
+    <table class="table table-bordered table-responsive">
+        <thead class="bg-dark text-light">
+            <tr>
+                <th>No</th>
+                <th>Fasilitas</th>
+                <th>Detail</th>
+                <th>Image</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if ($fasilitas)
+                <?php $angka = 1; ?>
+                @foreach ($fasilitas as $f)
+                <tr>
+                    <td>{{ $angka++ }}</td>
+                    <td>{{ $f->nama }}</td>
+                    <td>{{ $f->detail }}</td>
+                    <td>{{ $f->image }}</td>
+                    <td class="d-flex">
+                        <a class="btn btn-warning text-light" href="/admin/fasilitas-kamar/edit/{{ $f->id }}">Edit</a>
+                        <form method="post" action="/admin/fasilitas-kamar/destroy">
+                            @method('delete')
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $f->id }}">
+                            <button class="btn btn-danger text-light" onclick="confirm('Anda yakin menghapus data ?')" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            @else
+                <p>tidak ada data</p>
+            @endif
+            
+        </tbody>
+    </table>
+@endsection

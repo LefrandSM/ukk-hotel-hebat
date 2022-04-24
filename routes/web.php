@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\FasilitasKamarController;
+use App\Http\Controllers\FasilitasHotelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::get('/admin/fasilitas-kamar/edit/{fasilitas}', [FasilitasKamarController:
 Route::post('/admin/fasilitas-kamar/store', [FasilitasKamarController::class, 'store']);
 Route::delete('/admin/fasilitas-kamar/destroy', [FasilitasKamarController::class, 'destroy']);
 Route::put('/admin/fasilitas-kamar/update/{fasilitas}', [FasilitasKamarController::class, 'update']);
+// fasilitas hotel
+Route::get('/admin/fasilitas-hotel', [FasilitasHotelController::class, 'fasilitas']);
