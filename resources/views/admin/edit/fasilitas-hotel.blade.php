@@ -26,7 +26,10 @@
     <div class="mb-3 row">
         <label for="image" class="col-sm-2 col-form-label">Image</label>
         <div class="col-sm-10">
-            <input class="form-control" type="file" id="image">
+            <input class="form-control @error('image') is-invalid @enderror" type="file" name="image" id="image">
+            @error('image')
+                  <p class="text-danger">{{ $message }}</p>
+            @enderror
         </div>
     </div>
     <div class="row mb-4">

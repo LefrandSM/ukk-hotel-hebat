@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\FasilitasHotel;
 
 class FasilitasHotelController extends Controller
@@ -40,9 +41,12 @@ class FasilitasHotelController extends Controller
     {
         $validateData = $request->validate([
             'nama' => 'required',
+            'image' => 'image|file|max:5000',
             'detail' => 'required'
         ]);
-        $validateData['image'] = '';
+        if ($request->file('image')) {
+            $validateData['image'] = $request->file('image')->store('fasilitas-hotel');
+        }
 
         FasilitasHotel::create($validateData);
 
@@ -50,6 +54,8 @@ class FasilitasHotelController extends Controller
     }
     public function destroy(Request $request)
     {
+        $fasilitas = FasilitasHotel::where('id', $request->id)->get();
+        Storage::delete($fasilitas[0]['image']);
         FasilitasHotel::destroy($request->id);
 
         return redirect('/admin/fasilitas-hotel')->with('success', 'Fasilitas hotel berhasil di hapus');
@@ -58,9 +64,16 @@ class FasilitasHotelController extends Controller
     {
         $validateData = $request->validate([
             'nama' => 'required',
-            'detail' => 'required'
+            'detail' => 'required',
+            'image' => 'image|file|max:5000'
         ]);
-        $validateData['image'] = '';
+
+        if ($request->file('image')) {
+            Storage::delete($fasilitas->image);
+            $validateData['image'] = $request->file('image')->store('fasilitas-hotel');
+        } else {
+            $validateData['image'] = $fasilitas->image;
+        }
 
         FasilitasHotel::where('id', $fasilitas->id)
             ->update($validateData);

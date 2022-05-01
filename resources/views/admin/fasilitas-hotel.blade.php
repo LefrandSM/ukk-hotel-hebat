@@ -33,7 +33,13 @@
                     <td>{{ $angka++ }}</td>
                     <td>{{ $f->nama }}</td>
                     <td>{{ $f->detail }}</td>
-                    <td>{{ $f->image }}</td>
+                    <td>
+                        @if ($f->image)
+                            <img src="{{ asset('storage/' . $f->image) }}" class="img-thumbnail" style="width: 300px">
+                        @else
+                            <p>Tidak ada gambar</p>
+                        @endif
+                    </td>
                     <td class="d-flex">
                         <a class="btn btn-warning text-light" href="/admin/fasilitas-hotel/edit/{{ $f->id }}">Edit</a>
                         <form method="post" action="/admin/fasilitas-hotel/destroy">
