@@ -7,6 +7,8 @@
 
     {{-- Bootstrap CSS --}}
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+    {{-- fontawesome --}}
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
 
     <title>{{ $title }}</title>
 </head>
@@ -18,6 +20,9 @@
     @include('template/footer')
     
 
+{{-- bootstrap js --}}
 <script src="/js/bootstrap/bootstrap.js"></script>
+{{-- fontawesome js --}}
+<script src="/fontawesome/js/all.js"></script>
 </body>
 </html>

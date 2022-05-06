@@ -14,7 +14,6 @@
             @endif
         </div>
     </div>
-    <a href="/admin/fasilitas-kamar/tambah" class="btn btn-primary my-2 px-3">Tambah</a>
     <table class="table table-bordered table-responsive">
         <thead class="bg-dark text-light">
             <tr>
@@ -55,4 +54,8 @@
             
         </tbody>
     </table>
+    
+    <div class="d-flex justify-content-end">
+        <a href="/admin/fasilitas-kamar/tambah" class="btn btn-primary my-2 px-3"><i class="fa-solid fa-plus"></i></a>
+    </div>
 @endsection
