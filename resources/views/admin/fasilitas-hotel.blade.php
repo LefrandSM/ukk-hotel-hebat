@@ -3,9 +3,9 @@
 @section('content')
     <div class="row">
         <div class="col-lg-3">
-            <h1 class="display-6">Kamar</h1>
+            <h1 class="display-6">Fasilitas Hotel</h1>
         </div>
-        <div class="col-xl-10">
+        <div class="col-lg-9">
             @if (session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>{{ session('success') }}</strong>
@@ -14,38 +14,38 @@
             @endif
         </div>
     </div>
-    <a href="/admin/kamar/tambah" class="btn btn-primary my-2 px-3">Tambah</a>
+    <a href="/admin/fasilitas-hotel/tambah" class="btn btn-primary my-2 px-3">Tambah</a>
     <table class="table table-bordered table-responsive">
         <thead class="bg-dark text-light">
             <tr>
                 <th>No</th>
-                <th>Tipe Kamar</th>
-                <th>Jumlah Kamar</th>
-                <th>Fasilitas Kamar</th>
+                <th>Fasilitas</th>
+                <th>Detail</th>
+                <th>Image</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            @if ($kamar)
+            @if ($fasilitas)
                 <?php $angka = 1; ?>
-                @foreach ($kamar as $k)
+                @foreach ($fasilitas as $f)
                 <tr>
                     <td>{{ $angka++ }}</td>
-                    <td>{{ $k->tipe_kamar }}</td>
-                    <td>{{ $k->jml_kamar }}</td>
+                    <td>{{ $f->nama }}</td>
+                    <td>{{ $f->detail }}</td>
                     <td>
-                        <ul>
-                        @foreach ($k->fasilitas as $fasilitas)
-                                <li>{{ $fasilitas->nama_fasilitas }}</li>
-                        @endforeach
-                        </ul>
+                        @if ($f->image)
+                            <img src="{{ asset('storage/' . $f->image) }}" class="img-thumbnail" style="width: 300px">
+                        @else
+                            <p>Tidak ada gambar</p>
+                        @endif
                     </td>
                     <td class="d-flex">
-                        <a class="btn btn-warning text-light" href="/admin/kamar/edit/{{ $k->id }}">Edit</a>
-                        <form method="post" action="/admin/kamar/destroy">
+                        <a class="btn btn-warning text-light" href="/admin/fasilitas-hotel/edit/{{ $f->id }}">Edit</a>
+                        <form method="post" action="/admin/fasilitas-hotel/destroy">
                             @method('delete')
                             @csrf
-                            <input type="hidden" name="id" value="{{ $k->id }}">
+                            <input type="hidden" name="id" value="{{ $f->id }}">
                             <button class="btn btn-danger text-light" onclick="confirm('Anda yakin menghapus data ?')" type="submit">Delete</button>
                         </form>
                     </td>
