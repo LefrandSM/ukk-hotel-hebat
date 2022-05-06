@@ -9,7 +9,7 @@
           <a href="/admin/kamar" class="btn btn-primary">Tabel kamar</a>
         </div>
     </div>
-    <div class="card">
+    <div class="card mb-5">
         <h5 class="card-header">Fasilitas Hotel</h5>
         <div class="card-body">
           <p class="card-text">Jumlah fasilitas hotel saat ini {{ $fasilitas_hotel }}</p>
