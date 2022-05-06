@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\FasilitasKamarController;
 use App\Http\Controllers\FasilitasHotelController;
+use App\Http\Controllers\ReservasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,9 @@ use App\Http\Controllers\FasilitasHotelController;
 Route::get('/', [TamuController::class, 'home']);
 Route::get('/fasilitas', [TamuController::class, 'fasilitas']);
 Route::get('/kamar', [TamuController::class, 'kamar']);
+
+// Reservasi
+Route::post('/reservasi/store', [ReservasiController::class, 'store']);
 
 // Admin
 Route::get('/admin', [AdminController::class, 'dashboard']);

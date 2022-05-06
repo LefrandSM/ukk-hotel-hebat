@@ -10,6 +10,7 @@ class Reservasi extends Model
     protected $table = 'tb_reservasi';
     protected $guarded = ['id'];
 
+
     public function tamu()
     {
         return $this->hasOne(Tamu::class);
