@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TamuController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\FasilitasKamarController;
@@ -17,8 +18,12 @@ use App\Http\Controllers\FasilitasHotelController;
 |
 */
 
+// Tamu
+Route::get('/', [TamuController::class, 'home']);
+Route::get('/fasilitas', [TamuController::class, 'fasilitas']);
+
 // Admin
-Route::get('/', [AdminController::class, 'dashboard']);
+Route::get('/admin', [AdminController::class, 'dashboard']);
 // kamar
 Route::get('/admin/kamar', [KamarController::class, 'kamar']);
 Route::get('/admin/kamar/tambah', [KamarController::class, 'tambah_kamar']);
