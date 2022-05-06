@@ -13,6 +13,7 @@ class TamuController extends Controller
         $data = [
             'title' => 'Home',
             'css' => '/css/tamu/home.css',
+            'tipe' => Kamar::all(),
             'status' => 'tamu'
         ];
 
