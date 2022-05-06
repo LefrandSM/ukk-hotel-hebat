@@ -15,12 +15,12 @@ class CreateTamuTable extends Migration
     {
         Schema::create('tb_tamu', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('reservasi_id');
+            $table->foreignId('reservasi_id')->nullable();
             $table->string('nama_pemesan', 50);
             $table->string('email', 30);
             $table->string('no_hp', 20);
             $table->string('nama_tamu', 50);
-            $table->string('password', 15);
+            $table->timestamps();
         });
     }
 

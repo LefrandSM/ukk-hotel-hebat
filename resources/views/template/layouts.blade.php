@@ -10,6 +10,11 @@
     {{-- fontawesome --}}
     <link rel="stylesheet" href="/fontawesome/css/all.css">
 
+    {{-- my css --}}
+    @if ($status == 'tamu')
+        <link rel="stylesheet" href="{{ $css }}">
+    @endif
+
     <title>{{ $title }}</title>
 </head>
 <body>
