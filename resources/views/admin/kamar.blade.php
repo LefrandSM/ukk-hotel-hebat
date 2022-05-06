@@ -30,17 +30,17 @@
                 <?php $angka = 1; ?>
                 @foreach ($kamar as $k)
                 <tr>
-                    <th>{{ $angka++ }}</th>
-                    <th>{{ $k->tipe_kamar }}</th>
-                    <th>{{ $k->jml_kamar }}</th>
-                    <th>
+                    <td>{{ $angka++ }}</td>
+                    <td>{{ $k->tipe_kamar }}</td>
+                    <td>{{ $k->jml_kamar }}</td>
+                    <td>
                         <ul>
                         @foreach ($k->fasilitas as $fasilitas)
                                 <li>{{ $fasilitas->nama_fasilitas }}</li>
                         @endforeach
                         </ul>
-                    </th>
-                    <th class="d-flex">
+                    </td>
+                    <td class="d-flex">
                         <a class="btn btn-warning text-light" href="/admin/kamar/edit/{{ $k->id }}">Edit</a>
                         <form method="post" action="/admin/kamar/destroy">
                             @method('delete')
@@ -48,7 +48,7 @@
                             <input type="hidden" name="id" value="{{ $k->id }}">
                             <button class="btn btn-danger text-light" onclick="confirm('Anda yakin menghapus data ?')" type="submit">Delete</button>
                         </form>
-                    </th>
+                    </td>
                 </tr>
                 @endforeach
             @else
