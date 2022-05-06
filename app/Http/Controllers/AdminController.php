@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kamar;
+use App\Models\FasilitasHotel;
 
 class AdminController extends Controller
 {
@@ -10,10 +12,11 @@ class AdminController extends Controller
     {
         $data = [
             'title' => 'Dashboard',
+            'kamar' => Kamar::count(),
+            'fasilitas_hotel' => FasilitasHotel::count(),
             'status' => 'admin'
         ];
 
         return view('admin/dashboard', $data);
     }
-    
 }
