@@ -21,6 +21,7 @@ use App\Http\Controllers\FasilitasHotelController;
 // Tamu
 Route::get('/', [TamuController::class, 'home']);
 Route::get('/fasilitas', [TamuController::class, 'fasilitas']);
+Route::get('/kamar', [TamuController::class, 'kamar']);
 
 // Admin
 Route::get('/admin', [AdminController::class, 'dashboard']);

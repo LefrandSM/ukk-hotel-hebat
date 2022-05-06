@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FasilitasHotel;
+use App\Models\Kamar;
 use Illuminate\Http\Request;
 
 class TamuController extends Controller
@@ -27,5 +28,16 @@ class TamuController extends Controller
         ];
 
         return view('/tamu/fasilitas', $data);
+    }
+    public function kamar()
+    {
+        $data = [
+            'title' => 'Fasilitas',
+            'css' => '/css/tamu/kamar.css',
+            'kamar' => Kamar::all(),
+            'status' => 'tamu'
+        ];
+
+        return view('/tamu/kamar', $data);
     }
 }
