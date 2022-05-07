@@ -7,6 +7,7 @@ use App\Http\Controllers\KamarController;
 use App\Http\Controllers\FasilitasKamarController;
 use App\Http\Controllers\FasilitasHotelController;
 use App\Http\Controllers\ReservasiController;
+use App\Http\Controllers\ResepsionisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,14 @@ Route::get('/kamar', [TamuController::class, 'kamar']);
 // Reservasi
 Route::post('/reservasi/store', [ReservasiController::class, 'store']);
 
+// Resepsionis
+Route::get('/resepsionis', [ResepsionisController::class, 'dashboard']);
+// fasilitas kamar
+Route::get('/resepsionis/fasilitas-kamar', [ResepsionisController::class, 'fasilitas']);
+// reservasi
+Route::get('/resepsionis/reservasi', [ResepsionisController::class, 'reservasi']);
+
+
 // Admin
 Route::get('/admin', [AdminController::class, 'dashboard']);
 // kamar
@@ -36,7 +45,7 @@ Route::get('/admin/kamar/edit/{kamar}', [KamarController::class, 'edit_kamar']);
 Route::post('/admin/kamar/store', [KamarController::class, 'store']);
 Route::delete('/admin/kamar/destroy', [KamarController::class, 'destroy']);
 Route::put('/admin/kamar/update/{kamar}', [KamarController::class, 'update']);
-// fasilitas-kamar
+// fasilitas kamar
 Route::get('/admin/fasilitas-kamar', [FasilitasKamarController::class, 'fasilitas']);
 Route::get('/admin/fasilitas-kamar/tambah', [FasilitasKamarController::class, 'tambah_fasilitas']);
 Route::get('/admin/fasilitas-kamar/edit/{fasilitas}', [FasilitasKamarController::class, 'edit_fasilitas']);

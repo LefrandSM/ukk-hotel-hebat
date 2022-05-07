@@ -47,4 +47,28 @@
             </div>
         </div>
     </div>
+@elseif ($status == 'resepsionis')
+    <div class="container">
+        <div class="row mt-5 mb-3">
+            <div class="col-xl-7">
+                <h1>HOTEL HEBAT</h1>
+            </div>
+            <div class="col-xl-1 d-flex align-items-end">
+                <h4>Resepsionis</h4>
+            </div>
+            <div class="col-xl-4 d-flex align-items-end justify-content-end">
+                <ul class="nav">
+                    <li class="nav-item">
+                    <a class="nav-link {{ Request::is('resepsionis') ? 'text-dark' : '' }}" aria-current="page" href="/resepsionis">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('resepsionis/fasilitas-kamar*') ? 'text-dark' : '' }}" href="/resepsionis/fasilitas-kamar">Fasilitas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('resepsionis/reservasi*') ? 'text-dark' : '' }}" aria-current="page" href="/resepsionis/reservasi">Reservasi</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 @endif
