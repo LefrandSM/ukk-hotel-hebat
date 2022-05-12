@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/fontawesome/css/all.css">
 
     {{-- my css --}}
-    @if ($status == 'tamu')
+    @if ($status == 'tamu' || $status == 'auth')
         <link rel="stylesheet" href="{{ $css }}">
     @endif
 

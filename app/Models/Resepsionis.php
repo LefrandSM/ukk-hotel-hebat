@@ -9,4 +9,5 @@ class Resepsionis extends Model
 {
     protected $table = 'tb_resepsionis';
     protected $guarded = ['id'];
+    protected $guard = 'resepsionis';
 }

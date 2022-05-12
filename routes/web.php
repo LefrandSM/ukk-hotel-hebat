@@ -8,6 +8,7 @@ use App\Http\Controllers\FasilitasKamarController;
 use App\Http\Controllers\FasilitasHotelController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\ResepsionisController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +60,6 @@ Route::get('/admin/fasilitas-hotel/edit/{fasilitas}', [FasilitasHotelController:
 Route::post('/admin/fasilitas-hotel/create', [FasilitasHotelController::class, 'create']);
 Route::delete('/admin/fasilitas-hotel/destroy', [FasilitasHotelController::class, 'destroy']);
 Route::put('/admin/fasilitas-hotel/update/{fasilitas}', [FasilitasHotelController::class, 'update']);
+
+
+Route::get('/login', [AuthController::class, 'login']);

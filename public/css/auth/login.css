@@ -1,0 +1,55 @@
+body {
+    background: linear-gradient(45deg, #f22613, #f89406, #26a65b, #5868ec, #f54e80, #f7ca18, #d2527f);
+    background-size: 500% 500%;
+    -webkit-animation: gradientBg 12s ease infinite;
+    -moz-animation: gradientBg 12s ease infinite;
+    animation: gradientBg 12s ease infinite;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login {
+    width: 90%;
+    border-top-left-radius: 55px;
+    border-top-right-radius: 55px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #fff;
+}
+.login header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    color: #fff;
+}
+.login .form {
+    padding: 40px;
+}
+
+
+@-webkit-keyframes gradientBg {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes gradientBg {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes gradientBg {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@media only screen and (min-width: 900px) {
+    .login {
+        width: 50%;
+    }
+    
+}

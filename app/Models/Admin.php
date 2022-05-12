@@ -9,4 +9,5 @@ class Admin extends Model
 {
     protected $table = 'tb_admin';
     protected $guarded = ['id'];
+    protected $guard = 'admin';
 }

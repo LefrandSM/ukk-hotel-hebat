@@ -43,6 +43,9 @@
                     <li class="nav-item">
                     <a class="nav-link {{ Request::is('fasilitas*') ? 'text-dark' : '' }}" href="/fasilitas">Fasilitas</a>
                     </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>

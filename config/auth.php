@@ -40,6 +40,18 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'tamu' => [
+            'driver' => 'session',
+            'provider' => 'tamus',
+        ],
+        'resepsionis' => [
+            'driver' => 'session',
+            'provider' => 'resepsionis',
+        ],
     ],
 
     /*
@@ -63,6 +75,18 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+        'tamus' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Tamu::class,
+        ],
+        'resepsionis' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Resepsionis::class,
         ],
 
         // 'users' => [
