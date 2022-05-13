@@ -1,13 +1,13 @@
 @if ($status == 'admin')
     <div class="container">
         <div class="row mt-5 mb-5">
-            <div class="col-xl-6">
+            <div class="col-xl-5">
                 <h1>HOTEL HEBAT</h1>
             </div>
             <div class="col-xl-1 d-flex align-items-end">
                 <h4>Admin</h4>
             </div>
-            <div class="col-xl-5 d-flex align-items-end">
+            <div class="col-xl-6 d-flex align-items-end">
                 <ul class="nav">
                     <li class="nav-item">
                     <a class="nav-link {{ Request::is('admin') ? 'text-dark' : '' }}" aria-current="page" href="/admin">Dashboard</a>
@@ -20,6 +20,12 @@
                     </li>
                     <li class="nav-item">
                     <a class="nav-link {{ Request::is('admin/fasilitas-hotel*') ? 'text-dark' : '' }}" href="/admin/fasilitas-hotel">Fasilitas Hotel</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout" method="POST">
+                            @csrf
+                            <button class="btn btn-danger">Logout</button>
+                        </form>
                     </li>
                 </ul>
             </div>
