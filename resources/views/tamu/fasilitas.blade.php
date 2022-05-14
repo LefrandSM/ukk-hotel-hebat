@@ -5,16 +5,18 @@
         <img src="{{ asset('storage/jumbotron.jpg') }}" alt="">
     </div>
     <div class="row">
-        <h1 class="mb-3">Fasilitas</h1>
+        <h1 class="mb-3 display-6">Fasilitas</h1>
     </div>
     <div class="row mb-5">
         @foreach ($fasilitas as $f)
         <div class="col-xl-4">
-            <div class="card" style="width: 18rem;">
-                <img src="{{ asset('storage/'. $f->image) }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{ $f->nama }}</h5>
-                  <p class="card-text">{{ $f->detail }}</p>
+            <div class="row shadow g-0 bg-light position-relative">
+                <div class="col-md-6 mb-md-0 p-md-4">
+                  <img src="{{ asset('storage/'. $f->image) }}" class="w-100">
+                </div>
+                <div class="col-md-6 p-4 ps-md-0">
+                  <h5 class="mt-0">{{ $f->nama }}</h5>
+                  <p>{{ $f->detail }}</p>
                 </div>
               </div>
         </div>

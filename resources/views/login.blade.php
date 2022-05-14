@@ -3,7 +3,7 @@
 @section('content')
     <div class="login shadow">
         <header>
-            <h1>Login</h1>
+            <h1 class="display-2">Login</h1>
         </header>
         @if (session()->has('gagal'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -32,6 +32,9 @@
                     <button type="submit" name="login" class="btn btn-primary">Login</button>
                 </div>
             </form>
+            <div class="link text-center">
+                <a href="/" class=" text-decoration-none">Kembali ke halaman home</a>
+            </div>
         </div>
     </div>
 @endsection

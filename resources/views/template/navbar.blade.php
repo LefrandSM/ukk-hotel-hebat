@@ -59,13 +59,13 @@
 @elseif ($status == 'resepsionis')
     <div class="container">
         <div class="row mt-5 mb-3">
-            <div class="col-xl-7">
+            <div class="col-xxl-7">
                 <h1>HOTEL HEBAT</h1>
             </div>
-            <div class="col-xl-1 d-flex align-items-end">
+            <div class="col-xxl-1 d-flex align-items-end">
                 <h4>Resepsionis</h4>
             </div>
-            <div class="col-xl-4 d-flex align-items-end justify-content-end">
+            <div class="col-xxl-4 d-flex align-items-end justify-content-end">
                 <ul class="nav">
                     <li class="nav-item">
                     <a class="nav-link {{ Request::is('resepsionis') ? 'text-dark' : '' }}" aria-current="page" href="/resepsionis">Dashboard</a>
