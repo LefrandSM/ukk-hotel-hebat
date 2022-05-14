@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="{{ $css }}">
     @endif
 
-    <title>{{ $title }}</title>
+    <title>{{ $title }} | Hotel Hebat</title>
 </head>
 <body>
     @include('template/navbar')

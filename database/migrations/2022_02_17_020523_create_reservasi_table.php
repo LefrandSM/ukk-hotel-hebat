@@ -16,7 +16,7 @@ class CreateReservasiTable extends Migration
         Schema::create('tb_reservasi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('tamu_id');
-            $table->foreignId('tipe_kamar');
+            $table->foreignId('kamar_id');
             $table->integer('jml_kamar')->length(2)->unsigned();
             $table->date('check_in');
             $table->date('check_out');

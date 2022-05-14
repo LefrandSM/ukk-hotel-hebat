@@ -30,16 +30,34 @@ class AuthController extends Controller
  
             return redirect()->intended('/admin');
         }
+
+        if(Auth::guard('resepsionis')->attempt(['username' => $credentials['username'], 'password' => $credentials['password']])) {
+            $request->session()->regenerate();
+
+ 
+            return redirect()->intended('/resepsionis');
+        }
         return redirect('/login')->with('gagal', 'Username atau password salah');
     }
     public function logout(Request $request)
     {
-        Auth::guard('admin')->logout();
-    
-        $request->session()->invalidate();
-    
-        $request->session()->regenerateToken();
-    
-        return redirect('/login');
+        if(Auth::guard('admin')) {
+            Auth::guard('admin')->logout();
+        
+            $request->session()->invalidate();
+        
+            $request->session()->regenerateToken();
+        
+            return redirect('/login');
+        }
+        if(Auth::guard('resepsionis')) {
+            Auth::guard('resepsionis')->logout();
+        
+            $request->session()->invalidate();
+        
+            $request->session()->regenerateToken();
+        
+            return redirect('/login');
+        }
     }
 }

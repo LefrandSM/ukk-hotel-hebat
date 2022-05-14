@@ -30,11 +30,15 @@ Route::get('/kamar', [TamuController::class, 'kamar']);
 Route::post('/reservasi/store', [ReservasiController::class, 'store']);
 
 // Resepsionis
-Route::get('/resepsionis', [ResepsionisController::class, 'dashboard']);
+Route::get('/resepsionis', [ResepsionisController::class, 'dashboard'])->middleware('auth:resepsionis');
 // fasilitas kamar
-Route::get('/resepsionis/fasilitas-kamar', [ResepsionisController::class, 'fasilitas']);
+Route::get('/resepsionis/fasilitas-kamar', [ResepsionisController::class, 'fasilitas'])->middleware('auth:resepsionis');
 // reservasi
-Route::get('/resepsionis/reservasi', [ResepsionisController::class, 'reservasi']);
+Route::get('/resepsionis/reservasi', [ResepsionisController::class, 'reservasi'])->middleware('auth:resepsionis');
+Route::get('/resepsionis/reservasi/{reservasi}', [ReservasiController::class, 'detail'])->middleware('auth:resepsionis');
+Route::get('/resepsionis/reservasi/edit/{reservasi}', [ReservasiController::class, 'edit'])->middleware('auth:resepsionis');
+Route::delete('/reservasi/destroy', [ReservasiController::class, 'destroy']);
+Route::put('/reservasi/update/{reservasi}', [ReservasiController::class, 'update']);
 
 
 // Admin

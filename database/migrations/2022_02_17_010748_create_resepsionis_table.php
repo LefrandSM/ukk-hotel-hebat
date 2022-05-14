@@ -16,7 +16,7 @@ class CreateResepsionisTable extends Migration
         Schema::create('tb_resepsionis', function (Blueprint $table) {
             $table->id();
             $table->string('username', 15);
-            $table->string('password', 15);
+            $table->text('password');
             $table->string('nama', 50);
         });
     }

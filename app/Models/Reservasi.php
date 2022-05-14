@@ -33,6 +33,6 @@ class Reservasi extends Model
     }
     public function kamar()
     {
-        return $this->belongsToMany(Kamar::class);
+        return $this->belongsTo(Kamar::class);
     }
 }
