@@ -37,13 +37,13 @@
                         @endforeach
                     </td>
                     <td>{{ $f->nama_fasilitas }}</td>
-                    <td class="d-flex">
-                        <a class="btn btn-warning text-light" href="/admin/fasilitas-kamar/edit/{{ $f->id }}">Edit</a>
-                        <form method="post" action="/admin/fasilitas-kamar/destroy">
+                    <td>
+                        <a class="btn btn-warning text-light d-inline" href="/admin/fasilitas-kamar/edit/{{ $f->id }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <form class="d-inline" method="post" action="/admin/fasilitas-kamar/destroy">
                             @method('delete')
                             @csrf
                             <input type="hidden" name="id" value="{{ $f->id }}">
-                            <button class="btn btn-danger text-light" onclick="confirm('Anda yakin menghapus data ?')" type="submit">Delete</button>
+                            <button class="btn btn-danger text-light" onclick="confirm('Anda yakin menghapus data ?')" type="submit"><i class="fa-solid fa-trash"></i></button>
                         </form>
                     </td>
                 </tr>

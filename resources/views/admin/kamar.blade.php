@@ -39,13 +39,13 @@
                         @endforeach
                         </ul>
                     </td>
-                    <td class="d-flex">
-                        <a class="btn btn-warning text-light" href="/admin/kamar/edit/{{ $k->id }}">Edit</a>
-                        <form method="post" action="/admin/kamar/destroy">
+                    <td>
+                        <a class="btn btn-warning text-light d-inline" href="/admin/kamar/edit/{{ $k->id }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <form class="d-inline" method="post" action="/admin/kamar/destroy">
                             @method('delete')
                             @csrf
                             <input type="hidden" name="id" value="{{ $k->id }}">
-                            <button class="btn btn-danger text-light" onclick="confirm('Anda yakin menghapus data ?')" type="submit">Delete</button>
+                            <button class="btn btn-danger text-light" onclick="confirm('Anda yakin menghapus data ?')" type="submit"><i class="fa-solid fa-trash"></i></button>
                         </form>
                     </td>
                 </tr>

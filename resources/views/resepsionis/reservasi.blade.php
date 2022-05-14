@@ -2,20 +2,20 @@
 
 @section('content')
     <div class="row mb-3">
-        <div class="col-xl-3">
+        <div class="col-xl-3 mb-3">
             <form action="/resepsionis/reservasi" class="d-flex">
                 <input type="date" class="form-control" name="check_in">
                 <button class="btn btn-primary" type="submit" id="search"><i class="fa-regular fa-calendar"></i></button>
             </form>
         </div>
-        <div class="col-xl-9">
-            @if (session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>{{ session('success') }}</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
+    </div>
+    <div class="row">
+        @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ session('success') }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+        @endif
     </div>
     <table class="table table-bordered table-responsive">
         <thead class="table-dark">
@@ -36,7 +36,7 @@
                 <td>{{ $r->check_in }}</td>
                 <td>{{ $r->check_out }}</td>
                 <td>
-                    <a href="/resepsionis/reservasi/{{ $r->id }}" class="btn btn-primary d-inline">Check in <i class="fa-regular fa-calendar-check"></i></a>
+                    <a href="/resepsionis/reservasi/{{ $r->id }}" class="btn btn-success d-inline">Check in <i class="fa-regular fa-calendar-check"></i></a>
                     <form method="post" action="/reservasi/destroy" class="d-inline">
                         @method('delete')
                         @csrf
