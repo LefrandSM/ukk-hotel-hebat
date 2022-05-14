@@ -87,8 +87,11 @@
                     </div>
                 </div>
                 <div class="mb-5 row">
-                    <div class="col-xl-4">
-                        <button class="btn btn-primary" type="submit">Konfirmasi Pemesanan</button>
+                    <div class="col-xl-6">
+                        <button class="btn btn-primary d-inline" type="submit">Konfirmasi Pemesanan <i class="fa-solid fa-paper-plane"></i></button>
+                        @if (session()->has('success'))
+                            <a class="btn btn-warning d-inline ml-3" href="/tamu/report/{{ session('reservasi') }}">Cetak Reservasi <i class="fa-solid fa-print"></i></a>
+                        @endif
                     </div>
                 </div>
             </form>

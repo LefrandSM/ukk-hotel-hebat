@@ -8,6 +8,7 @@ use App\Http\Controllers\FasilitasKamarController;
 use App\Http\Controllers\FasilitasHotelController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\ResepsionisController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AuthController;
 
 /*
@@ -29,6 +30,8 @@ Route::get('/kamar', [TamuController::class, 'kamar'])->middleware('guest:admin,
 
 // Reservasi
 Route::post('/reservasi/store', [ReservasiController::class, 'store']);
+// tamu pdf
+Route::get('/tamu/report/{reservasi}', [ReportController::class, 'tamu_pdf']);
 
 // Resepsionis
 Route::get('/resepsionis', [ResepsionisController::class, 'dashboard'])->middleware('auth:resepsionis');

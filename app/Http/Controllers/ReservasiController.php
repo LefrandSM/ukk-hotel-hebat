@@ -62,7 +62,7 @@ class ReservasiController extends Controller
         Tamu::where('id', $tamu->id)
             ->update(['reservasi_id' => $reservasi->id]);
 
-        return redirect('/')->with('success', 'Pesanan telah di buat');
+        return redirect('/')->with(['success' => 'Pesanan telah di buat', 'reservasi' => $reservasi->id]);
     }
     public function destroy(Request $request)
     {
