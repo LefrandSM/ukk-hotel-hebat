@@ -21,10 +21,11 @@ use App\Http\Controllers\AuthController;
 |
 */
 
+
 // Tamu
-Route::get('/', [TamuController::class, 'home']);
-Route::get('/fasilitas', [TamuController::class, 'fasilitas']);
-Route::get('/kamar', [TamuController::class, 'kamar']);
+Route::get('/', [TamuController::class, 'home'])->middleware('guest:admin,resepsionis');
+Route::get('/fasilitas', [TamuController::class, 'fasilitas'])->middleware('guest:admin,resepsionis');
+Route::get('/kamar', [TamuController::class, 'kamar'])->middleware('guest:admin,resepsionis');
 
 // Reservasi
 Route::post('/reservasi/store', [ReservasiController::class, 'store']);
@@ -66,6 +67,7 @@ Route::delete('/admin/fasilitas-hotel/destroy', [FasilitasHotelController::class
 Route::put('/admin/fasilitas-hotel/update/{fasilitas}', [FasilitasHotelController::class, 'update']);
 
 
-Route::get('/login', [AuthController::class, 'login'])->name('login');
+// Authentication
+Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest:admin,resepsionis');
 Route::post('/login', [AuthController::class, 'auth']);
 Route::post('/logout', [AuthController::class, 'logout']);
