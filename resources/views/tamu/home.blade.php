@@ -56,7 +56,7 @@
                 <div class="mb-3 row">
                     <label for="nama_tamu" class="col-sm-4 col-form-label">Tipe kamar</label>
                     <div class="col-sm-8">
-                        <select class="form-select" name="tipe_kamar" aria-label="Default select example">
+                        <select class="form-select" name="kamar_id" aria-label="Default select example">
                             @foreach ($tipe as $t)
                                 <option value="{{ $t->id }}">{{ $t->tipe_kamar }}</option>
                             @endforeach
