@@ -1,6 +1,7 @@
 @extends('template/layouts')
 
 @section('content')
+    <h1 class=" shadow display-6 bg-secondary pb-2 px-3 text-light mb-3">Reservasi <i class="fa-solid fa-receipt"></i></h1>
     <div class="row mb-3">
         <div class="col-xl-3 mb-3">
             <form action="/resepsionis/reservasi" class="d-flex">

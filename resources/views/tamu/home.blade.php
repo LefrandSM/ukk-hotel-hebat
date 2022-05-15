@@ -4,7 +4,7 @@
     <div class="jumbotron rounded mb-4">
         <img src="{{ asset('storage/jumbotron.jpg') }}" alt="">
     </div>
-    <div class="row mb-3">
+    <div class="row mb-3 title-form">
         <h1>Form Pemesanan</h1>
     </div>
     <div class="row pemesanan">

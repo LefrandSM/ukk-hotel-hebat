@@ -1,5 +1,5 @@
 @if ($status == 'admin')
-    <div class="container">
+    <div class="container navigation">
         <div class="row mt-5 mb-5">
             <div class="col-xl-3">
                 <h1>HOTEL HEBAT</h1>
@@ -33,7 +33,7 @@
     </div>
 
 @elseif ($status == 'tamu')
-    <div class="container">
+    <div class="container navigation">
         <div class="row mt-5 mb-3">
             <div class="col-xl-8">
                 <h1>HOTEL HEBAT</h1>
@@ -54,7 +54,7 @@
         </div>
     </div>
 @elseif ($status == 'resepsionis')
-    <div class="container">
+    <div class="container navigation">
         <div class="row mt-5 mb-3">
             <div class="col-xl-4">
                 <h1>HOTEL HEBAT</h1>
@@ -68,7 +68,7 @@
                     <a class="nav-link {{ Request::is('resepsionis') ? 'text-dark' : '' }}" aria-current="page" href="/resepsionis">Dashboard <i class="fa-solid fa-gauge-high"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('resepsionis/fasilitas-kamar*') ? 'text-dark' : '' }}" href="/resepsionis/fasilitas-kamar">Fasilitas <i class="fa-solid fa-door-closed"></i></a>
+                        <a class="nav-link {{ Request::is('resepsionis/fasilitas-kamar*') ? 'text-dark' : '' }}" href="/resepsionis/fasilitas-kamar">Fasilitas Kamar <i class="fa-solid fa-door-closed"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('resepsionis/reservasi*') ? 'text-dark' : '' }}" aria-current="page" href="/resepsionis/reservasi">Reservasi <i class="fa-solid fa-receipt"></i></a>

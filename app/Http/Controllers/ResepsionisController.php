@@ -13,6 +13,8 @@ class ResepsionisController extends Controller
     {
         $data = [
             'title' => 'Dashboard',
+            'reservasi' => Reservasi::all(),
+            'terbaru' => Reservasi::latest()->first(),
             'status' => 'resepsionis'
         ];
 

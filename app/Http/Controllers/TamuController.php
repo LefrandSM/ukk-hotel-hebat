@@ -13,6 +13,7 @@ class TamuController extends Controller
         $data = [
             'title' => 'Home',
             'css' => '/css/tamu/home.css',
+            'js' => '/js/tamu/home.js',
             'tipe' => Kamar::all(),
             'status' => 'tamu'
         ];
@@ -24,6 +25,7 @@ class TamuController extends Controller
         $data = [
             'title' => 'Fasilitas',
             'css' => '/css/tamu/fasilitas.css',
+            'js' => '/js/tamu/fasilitas.js',
             'fasilitas' => FasilitasHotel::all(),
             'status' => 'tamu'
         ];
@@ -35,6 +37,7 @@ class TamuController extends Controller
         $data = [
             'title' => 'Fasilitas',
             'css' => '/css/tamu/kamar.css',
+            'js' => '/js/tamu/kamar.js',
             'kamar' => Kamar::all(),
             'status' => 'tamu'
         ];

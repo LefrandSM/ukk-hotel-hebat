@@ -1,7 +1,7 @@
 @extends('template/layouts')
 
 @section('content')
-<h1 class="display-6 mb-5">Kamar</h1>
+<h1 class=" shadow display-6 bg-secondary pb-2 px-3 text-light mb-3">Reservasi <i class="fa-solid fa-receipt"></i></h1>
 <form method="post" action="/reservasi/update/{{ $reservasi->id }}">
     @method('put')
     @csrf
