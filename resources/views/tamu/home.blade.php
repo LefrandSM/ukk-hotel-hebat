@@ -100,7 +100,7 @@
             <h1 class="logo-pemesanan"><i class="fa-solid fa-check-to-slot"></i></h1>
         </div>
     </div>
-    <div class="row tentang my-5">
+    <div class="row tentang my-5 tentang">
         <h1 class="text-center mb-3">Tentang Kami <i class="fa-solid fa-hotel"></i></h1>
         <p class="px-4">Lepaskan diri Anda ke Hotel Hebat, dikelilingi oleh keindahan pegunungan yang indah, danau, dan sawah menghijau. Nikmati sore yang hangat dengan berenang di kolam renang dengan pemandangan matahari terbenam yang memukau, Kid's Club yang luas - enawarkan beragam fasilitas dan kegiatan anak-anak yang akan melengkapi kenyaman keluarga. Convention Center kami, dilengkapi pelayanan lengkap dengan ruang konversi terbesar di Bandung, mampu mengokomodasi hingga 3.000 delegasi. Manfaatkan ruang penyelenggaraan konvensi  M.I.C.E ataupun mewujudkan acara pernikahan adat yang mewah.</p>
     </div>

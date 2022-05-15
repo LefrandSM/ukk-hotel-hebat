@@ -29,6 +29,7 @@
 
 {{-- gsap js --}}
 <script src="/js/gsap/gsap.min.js"></script>
+<script src="/js/gsap/ScrollTrigger.min.js"></script>
 {{-- bootstrap js --}}
 <script src="/js/bootstrap/bootstrap.js"></script>
 {{-- fontawesome js --}}

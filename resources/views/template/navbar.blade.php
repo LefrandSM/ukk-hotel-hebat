@@ -33,12 +33,12 @@
     </div>
 
 @elseif ($status == 'tamu')
-    <div class="container navigation">
-        <div class="row mt-5 mb-3">
+    <div class="container navigation sticky-top">
+        <div class="row py-3">
             <div class="col-xl-8">
                 <h1>HOTEL HEBAT</h1>
             </div>
-            <div class="col-xl-4 d-flex align-items-end justify-content-end">
+            <div class="col-xl-4 d-flex align-items-end justify-content-end flex-row">
                 <ul class="nav">
                     <li class="nav-item">
                     <a class="nav-link {{ Request::is('/') ? 'text-dark' : '' }}" aria-current="page" href="/">Home <i class="fa-solid fa-house"></i></a>
