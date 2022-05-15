@@ -8,6 +8,15 @@
                 <button class="btn btn-primary" type="submit" id="search"><i class="fa-regular fa-calendar"></i></button>
             </form>
         </div>
+        <div class="col-xl-6"></div>
+        <div class="col-xl-3">
+            <form action="/resepsionis/reservasi" class="d-flex">
+                <div class="input-group mb-3">
+                    <input type="text" name="search" class="form-control" placeholder="Nama tamu.." aria-label="Nama tamu.." aria-describedby="button-addon2" autocomplete="off">
+                    <button class="btn btn-primary" type="submit" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="row">
         @if (session()->has('success'))
