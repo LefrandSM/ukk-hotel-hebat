@@ -1,11 +1,7 @@
 @extends('template/layouts')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-3">
-            <h1 class="display-6">Fasilitas Kamar</h1>
-        </div>
-    </div>
+<h1 class=" shadow display-6 bg-secondary pb-2 px-3 text-light mb-3">Fasilitas Kamar <i class="fa-solid fa-door-closed"></i></h1>
     <table class="table table-bordered table-responsive">
         <thead class="bg-dark text-light">
             <tr>

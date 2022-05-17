@@ -39,13 +39,13 @@
                             <p>Tidak ada gambar</p>
                         @endif
                     </td>
-                    <td class="d-flex">
-                        <a class="btn btn-warning text-light" href="/admin/fasilitas-hotel/edit/{{ $f->id }}">Edit</a>
-                        <form method="post" action="/admin/fasilitas-hotel/destroy">
+                    <td>
+                        <a class="btn btn-warning text-light d-inline" href="/admin/fasilitas-hotel/edit/{{ $f->id }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <form class="d-inline" method="post" action="/admin/fasilitas-hotel/destroy">
                             @method('delete')
                             @csrf
                             <input type="hidden" name="id" value="{{ $f->id }}">
-                            <button class="btn btn-danger text-light" onclick="confirm('Anda yakin menghapus data ?')" type="submit">Delete</button>
+                            <button class="btn btn-danger text-light d-inline" onclick="confirm('Anda yakin menghapus data ?')" type="submit"><i class="fa-solid fa-trash"></i></button>
                         </form>
                     </td>
                 </tr>

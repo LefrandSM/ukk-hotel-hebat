@@ -15,14 +15,14 @@
             <form action="/login" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
+                    <label for="username" class="form-label"><i class="fa-solid fa-user"></i> Username</label>
                     <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="username" autocomplete="off">
                     @error('username')
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-4">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label"><i class="fa-solid fa-lock"></i> Password</label>
                     <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="password">
                     @error('password')
                         <p class="text-danger">{{ $message }}</p>
@@ -33,7 +33,7 @@
                 </div>
             </form>
             <div class="link text-center">
-                <a href="/" class=" text-decoration-none">Kembali ke halaman home</a>
+                <a href="/" class=" text-decoration-none"><i class="fa-solid fa-chevron-left"></i> Kembali ke halaman home</a>
             </div>
         </div>
     </div>

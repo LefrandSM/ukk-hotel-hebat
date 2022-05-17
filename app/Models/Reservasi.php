@@ -15,12 +15,13 @@ class Reservasi extends Model
 
     public function scopeFilter($query)
     {
-        // if (request('search')) {
-        //     $tamu = Tamu::where('nama_tamu', 'like', '%' . request('search') . '%')->get();
-        //     foreach ($tamu as $t) {
-        //         $hasil = $query->where('tamu_id', $t->id);
-        //     }
-        // }
+        if (request('search')) {
+            $tamu = Tamu::where('nama_tamu', 'like', '%' . request('search') . '%')->get();
+            foreach ($tamu as $t) {
+                $id[] = $t->id;
+            }
+            return $query->whereIn('tamu_id', $id);
+        }
 
         if (request('check_in')) {
             return $query->where('check_in', 'like', '%' . request('check_in') . '%');

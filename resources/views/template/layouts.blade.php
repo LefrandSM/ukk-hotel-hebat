@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
     {{-- fontawesome --}}
     <link rel="stylesheet" href="/fontawesome/css/all.css">
+    {{-- layouts css --}}
+    <link rel="stylesheet" href="/css/template/navbar.css">
 
     {{-- my css --}}
     @if ($status == 'tamu' || $status == 'auth')
@@ -25,9 +27,19 @@
     @include('template/footer')
     
 
+{{-- gsap js --}}
+<script src="/js/gsap/gsap.min.js"></script>
+<script src="/js/gsap/ScrollTrigger.min.js"></script>
 {{-- bootstrap js --}}
 <script src="/js/bootstrap/bootstrap.js"></script>
 {{-- fontawesome js --}}
 <script src="/fontawesome/js/all.js"></script>
+
+{{-- my js --}}
+{{-- layouts js --}}
+<script src="/js/template/navbar.js"></script>
+@if ($status == 'tamu')
+    <script src="{{ $js }}"></script>
+@endif
 </body>
 </html>

@@ -1,6 +1,7 @@
 @extends('template/layouts')
 
 @section('content')
+<h1 class=" shadow display-6 bg-secondary pb-2 px-3 text-light mb-3">Reservasi <i class="fa-solid fa-receipt"></i></h1>
 <h1 class="display-6 my-3">{{ $reservasi->tamu->nama_pemesan }} detail reservasi</h1>
     <div class="card mb-3">
         <div class="card-header">
@@ -20,7 +21,7 @@
         </div>
     </div>
     <div class="mb-5">
-        <a href="#" class="btn btn-success">Print <i class="fa-solid fa-print"></i></a>
+        <a href="/tamu/report/{{ $reservasi->id }}" class="btn btn-success">Print <i class="fa-solid fa-print"></i></a>
         <a href="/resepsionis/reservasi/edit/{{ $reservasi->id }}" class="btn btn-warning">Edit <i class="fa-solid fa-pen-to-square"></i></a>
     </div>
 @endsection 

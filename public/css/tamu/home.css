@@ -2,6 +2,7 @@
     width: 100%;
     height: 300px;
     overflow: hidden;
+    opacity: 0;
 }
 .jumbotron img {
     width: 100%;
@@ -11,5 +12,13 @@
     font-size: 10rem;
 }
 .pemesanan {
-    background-color: #eee;
+    background-color: #fafafa;
+    opacity: 0;
+}
+.title-form {
+    opacity: 0;
+    margin-left: -50px;
+}
+.tentang h1 {
+    opacity: 0;
 }

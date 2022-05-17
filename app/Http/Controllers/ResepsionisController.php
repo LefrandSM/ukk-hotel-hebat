@@ -13,6 +13,8 @@ class ResepsionisController extends Controller
     {
         $data = [
             'title' => 'Dashboard',
+            'reservasi' => Reservasi::all(),
+            'terbaru' => Reservasi::latest()->first(),
             'status' => 'resepsionis'
         ];
 
@@ -32,7 +34,7 @@ class ResepsionisController extends Controller
     {
         $data = [
             'title' => 'Reservasi',
-            'reservasi' => Reservasi::latest()->filter()->get(),
+            'reservasi' => Reservasi::latest()->filter()->with('tamu')->get(),
             'status' => 'resepsionis'
         ];
 
