@@ -1,7 +1,7 @@
 @extends('template/layouts')
 
 @section('content')
-    <h1 class="mb-5">Dashboard</h1>
+    <h1 class="mb-3 display-6 bg-primary text-light p-3 shadow">Dashboard</h1>
     <div class="card mb-3">
         <h5 class="card-header">Kamar</h5>
         <div class="card-body">

@@ -12,6 +12,7 @@ class AuthController extends Controller
         $data = [
             'title' => 'Login',
             'css' => '/css/auth/login.css',
+            'js' => '/js/auth/login.js',
             'status' => 'auth'
         ];
 

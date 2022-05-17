@@ -32,7 +32,7 @@
                     <button type="submit" name="login" class="btn btn-primary">Login</button>
                 </div>
             </form>
-            <div class="link text-center">
+            <div class="link text-center home">
                 <a href="/" class=" text-decoration-none"><i class="fa-solid fa-chevron-left"></i> Kembali ke halaman home</a>
             </div>
         </div>

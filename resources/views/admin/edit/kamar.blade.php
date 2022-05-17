@@ -42,7 +42,7 @@
     <div class="row mb-4">
         <div class="col-sm-2"></div>
         <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary mb-5">Edit</button>
+            <button type="submit" class="btn btn-warning mb-5">Edit</button>
         </div>
     </div>
     </form>

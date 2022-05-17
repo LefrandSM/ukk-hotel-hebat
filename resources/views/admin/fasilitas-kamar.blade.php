@@ -1,19 +1,14 @@
 @extends('template/layouts')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-3">
-            <h1 class="display-6">Fasilitas Kamar</h1>
-        </div>
-        <div class="col-lg-9">
+            <h1 class="mb-3 display-6 bg-primary text-light p-3 shadow">Fasilitas Kamar</h1>
+            
             @if (session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>{{ session('success') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
-        </div>
-    </div>
     <table class="table table-bordered table-responsive">
         <thead class="bg-dark text-light">
             <tr>

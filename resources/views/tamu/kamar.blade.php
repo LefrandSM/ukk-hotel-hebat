@@ -1,6 +1,14 @@
 @extends('template/layouts')
 
 @section('content')
+
+<div class="jumbotron rounded mb-3">
+    <img src="{{ asset('storage/jumbotron.jpg') }}" alt="">
+</div>
+<div class=" mb-3 title-kamar">
+        <h1 class="display-6">Kamar</h1>
+        <section class="garis-bawah"></section>
+</div>
 <div class="row mb-4">
     @foreach($kamar as $k)
     <div class="col-xl-6">

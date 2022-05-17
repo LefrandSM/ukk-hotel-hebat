@@ -8,10 +8,10 @@
     width: 100%;
     margin-top: -200px;
 }
-.title-fasilitas {
+.card {
     opacity: 0;
 }
-.fasilitas {
+.title-kamar {
     opacity: 0;
 }
 .garis-bawah {

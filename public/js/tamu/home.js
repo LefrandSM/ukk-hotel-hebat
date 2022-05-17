@@ -1,7 +1,19 @@
-gsap.to(".title-form", {
-    x: 50,
+gsap.fromTo(".title-form", {
+    x: -50,
+    opacity: 0,
+}, {
+    x: 0,
     opacity: 1,
     delay: 0.5,
+    ease: "back.out(1.7)"
+})
+gsap.fromTo(".garis-bawah", {
+    x: -50,
+    opacity: 0,
+}, {
+    x: 0,
+    opacity: 1,
+    delay: 0.7,
     ease: "back.out(1.7)"
 })
 gsap.to(".jumbotron", {

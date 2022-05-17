@@ -1,6 +1,6 @@
 @if ($status == 'admin')
     <div class="container navigation">
-        <div class="row mt-5 mb-5">
+        <div class="row my-3">
             <div class="col-xl-3">
                 <h1>HOTEL HEBAT</h1>
             </div>

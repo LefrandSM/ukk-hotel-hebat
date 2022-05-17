@@ -17,7 +17,15 @@
 }
 .title-form {
     opacity: 0;
-    margin-left: -50px;
+}
+.garis-bawah {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: rgb(61, 80, 248);
 }
 .tentang h1 {
     opacity: 0;

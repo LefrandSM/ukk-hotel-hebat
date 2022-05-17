@@ -38,7 +38,7 @@
 {{-- my js --}}
 {{-- layouts js --}}
 <script src="/js/template/navbar.js"></script>
-@if ($status == 'tamu')
+@if ($status == 'tamu' || $status == 'auth')
     <script src="{{ $js }}"></script>
 @endif
 </body>

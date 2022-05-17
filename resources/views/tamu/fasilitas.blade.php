@@ -4,10 +4,11 @@
     <div class="jumbotron rounded mb-3">
         <img src="{{ asset('storage/jumbotron.jpg') }}" alt="">
     </div>
-    <div class="row">
-        <h1 class="mb-3 display-6">Fasilitas</h1>
+    <div class=" mb-3 title-fasilitas">
+            <h1 class="display-6">Fasilitas Hotel</h1>
+            <section class="garis-bawah"></section>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-5 fasilitas">
         @foreach ($fasilitas as $f)
         <div class="col-xl-4">
             <div class="row shadow g-0 bg-light position-relative">
